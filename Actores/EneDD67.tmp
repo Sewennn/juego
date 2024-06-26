@@ -1,0 +1,93 @@
+[gd_scene load_steps=14 format=3 uid="uid://b53ijfs4o130j"]
+
+[ext_resource type="Texture2D" uid="uid://drvav4nlj7hob" path="res://Sprites/zombie.png" id="1_kfemy"]
+[ext_resource type="Script" path="res://Scripts/Enemigo.gd" id="1_l8wmf"]
+[ext_resource type="Texture2D" uid="uid://d13sl77353xp4" path="res://Sprites/dead_body.png" id="3_wft21"]
+[ext_resource type="AudioStream" uid="uid://34pd6c4st2ch" path="res://Sprites/monster_die.wav" id="4_gyx4m"]
+[ext_resource type="Texture2D" uid="uid://b0xnk3mp4s021" path="res://Sprites/blood_splatter.png" id="4_v0c82"]
+[ext_resource type="Texture2D" uid="uid://cdsikqhwa6k07" path="res://art/Retro Impact Effect Pack 3 C.png" id="6_eisxe"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h03if"]
+radius = 29.1548
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_advnq"]
+atlas = ExtResource("6_eisxe")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_goci4"]
+atlas = ExtResource("6_eisxe")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfdwd"]
+atlas = ExtResource("6_eisxe")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ih6v"]
+atlas = ExtResource("6_eisxe")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0jie"]
+atlas = ExtResource("6_eisxe")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bmkyv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_advnq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_goci4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfdwd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ih6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0jie")
+}],
+"loop": true,
+"name": &"Explosion",
+"speed": 8.0
+}]
+
+[node name="Enemigo" type="CharacterBody2D"]
+script = ExtResource("1_l8wmf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_h03if")
+
+[node name="Estado" type="Node2D" parent="."]
+
+[node name="Vivo" type="Sprite2D" parent="Estado"]
+position = Vector2(5, -24)
+texture = ExtResource("1_kfemy")
+
+[node name="Explosion" type="AnimatedSprite2D" parent="Estado"]
+position = Vector2(100, -19)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_bmkyv")
+animation = &"Explosion"
+frame_progress = 0.602124
+
+[node name="Muerto" type="Sprite2D" parent="Estado"]
+visible = false
+z_index = -1
+texture = ExtResource("3_wft21")
+
+[node name="BloodSplatter" type="Sprite2D" parent="Estado/Muerto"]
+self_modulate = Color(0.435294, 0, 0, 1)
+show_behind_parent = true
+position = Vector2(5, 9)
+rotation = 0.598542
+texture = ExtResource("4_v0c82")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, -70)
+collision_mask = 3
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_gyx4m")
+bus = &"sfx"

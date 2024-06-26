@@ -1,0 +1,82 @@
+[gd_scene load_steps=11 format=3 uid="uid://c8gcaxbsgy4qm"]
+
+[ext_resource type="Script" path="res://Scripts/Bala.gd" id="1_m0efe"]
+[ext_resource type="Texture2D" uid="uid://dee2ard1gcoxc" path="res://art/Retro Impact Effect Pack 3 B.png" id="2_wlf5y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rbt7y"]
+radius = 40.3113
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcd6f"]
+atlas = ExtResource("2_wlf5y")
+region = Rect2(0, 576, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trxjn"]
+atlas = ExtResource("2_wlf5y")
+region = Rect2(32, 576, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxbwn"]
+atlas = ExtResource("2_wlf5y")
+region = Rect2(64, 576, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8f03g"]
+atlas = ExtResource("2_wlf5y")
+region = Rect2(96, 576, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eb5rd"]
+atlas = ExtResource("2_wlf5y")
+region = Rect2(128, 576, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jr8ud"]
+atlas = ExtResource("2_wlf5y")
+region = Rect2(160, 576, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n54ah"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcd6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trxjn")
+}],
+"loop": true,
+"name": &"disparo",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jxbwn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8f03g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eb5rd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jr8ud")
+}],
+"loop": false,
+"name": &"impacto",
+"speed": 8.0
+}]
+
+[node name="Bala" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 5
+script = ExtResource("1_m0efe")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(5.96046e-08, 0)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CircleShape2D_rbt7y")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
+sprite_frames = SubResource("SpriteFrames_n54ah")
+animation = &"disparo"
+autoplay = "disparo"

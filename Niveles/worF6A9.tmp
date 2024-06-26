@@ -1,0 +1,111 @@
+[gd_scene load_steps=6 format=3 uid="uid://dfcrbwjpyedgm"]
+
+[ext_resource type="Texture2D" uid="uid://bxy27sn7qc8js" path="res://Sprites/white_sq.png" id="1_h7igl"]
+[ext_resource type="PackedScene" uid="uid://bq2vpjby42xxr" path="res://Actores/Jugador.tscn" id="2_fgj1v"]
+[ext_resource type="PackedScene" uid="uid://b53ijfs4o130j" path="res://Actores/Enemigo.tscn" id="3_3ghmc"]
+[ext_resource type="PackedScene" uid="uid://c81kxri71pf41" path="res://Actores/marie.tscn" id="4_b8u33"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8kxjy"]
+size = Vector2(64, 64)
+
+[node name="World" type="Node2D"]
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="Floor" type="Sprite2D" parent="Environment"]
+self_modulate = Color(0.658824, 0.647059, 0.647059, 1)
+z_index = -2
+position = Vector2(151, 132)
+scale = Vector2(43, 43)
+texture = ExtResource("1_h7igl")
+
+[node name="Block" type="Sprite2D" parent="Environment"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(245, 115)
+texture = ExtResource("1_h7igl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Block"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Block/StaticBody2D"]
+shape = SubResource("RectangleShape2D_8kxjy")
+
+[node name="Block2" type="Sprite2D" parent="Environment"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(721, 268)
+texture = ExtResource("1_h7igl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Block2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Block2/StaticBody2D"]
+shape = SubResource("RectangleShape2D_8kxjy")
+
+[node name="Block3" type="Sprite2D" parent="Environment"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(476, 457)
+texture = ExtResource("1_h7igl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Block3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Block3/StaticBody2D"]
+shape = SubResource("RectangleShape2D_8kxjy")
+
+[node name="Block4" type="Sprite2D" parent="Environment"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(137, 485)
+texture = ExtResource("1_h7igl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Block4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Block4/StaticBody2D"]
+shape = SubResource("RectangleShape2D_8kxjy")
+
+[node name="Block5" type="Sprite2D" parent="Environment"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(478, 268)
+texture = ExtResource("1_h7igl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Block5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Block5/StaticBody2D"]
+shape = SubResource("RectangleShape2D_8kxjy")
+
+[node name="Block6" type="Sprite2D" parent="Environment"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(1062, 147)
+texture = ExtResource("1_h7igl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Block6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Block6/StaticBody2D"]
+shape = SubResource("RectangleShape2D_8kxjy")
+
+[node name="Block7" type="Sprite2D" parent="Environment"]
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(1045, 526)
+texture = ExtResource("1_h7igl")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Block7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Block7/StaticBody2D"]
+shape = SubResource("RectangleShape2D_8kxjy")
+
+[node name="Jugador" parent="." instance=ExtResource("2_fgj1v")]
+position = Vector2(600, 367)
+
+[node name="Enemigo" parent="." instance=ExtResource("3_3ghmc")]
+position = Vector2(109, 275)
+
+[node name="Enemigo2" parent="." instance=ExtResource("3_3ghmc")]
+position = Vector2(324, -111)
+
+[node name="Enemigo3" parent="." instance=ExtResource("3_3ghmc")]
+position = Vector2(1266, -174)
+
+[node name="Enemigo4" parent="." instance=ExtResource("3_3ghmc")]
+position = Vector2(1300, 722)
+
+[node name="Enemigo5" parent="." instance=ExtResource("3_3ghmc")]
+position = Vector2(564, 761)
+
+[node name="marie" parent="." instance=ExtResource("4_b8u33")]
+position = Vector2(816, 22)

@@ -1,0 +1,118 @@
+[gd_scene load_steps=6 format=3 uid="uid://bq2vpjby42xxr"]
+
+[ext_resource type="Script" path="res://Scripts/Jugador.gd" id="1_g0usk"]
+[ext_resource type="Texture2D" uid="uid://cl13cuhmjyu4u" path="res://art/aaaa (1).png" id="2_6eirq"]
+[ext_resource type="Texture2D" uid="uid://d13sl77353xp4" path="res://Sprites/dead_body.png" id="3_1ks7w"]
+[ext_resource type="Texture2D" uid="uid://b0xnk3mp4s021" path="res://Sprites/blood_splatter.png" id="4_0wt5i"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7mecc"]
+radius = 12.918
+height = 32.0518
+
+[node name="Jugador" type="CharacterBody2D" groups=["player"]]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_g0usk")
+
+[node name="Estado" type="Node2D" parent="."]
+position = Vector2(5, 2)
+
+[node name="Vivo" type="Sprite2D" parent="Estado"]
+position = Vector2(25, -36)
+rotation = 1.5708
+scale = Vector2(0.00608974, 0.00477722)
+texture = ExtResource("2_6eirq")
+centered = false
+
+[node name="Muerto" type="Sprite2D" parent="Estado"]
+visible = false
+z_index = -1
+texture = ExtResource("3_1ks7w")
+
+[node name="BloodSplatter" type="Sprite2D" parent="Estado/Muerto"]
+self_modulate = Color(0.435294, 0, 0, 1)
+show_behind_parent = true
+position = Vector2(5, 9)
+rotation = 0.598542
+texture = ExtResource("4_0wt5i")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(36, -2)
+target_position = Vector2(0, -1000)
+collision_mask = 3
+
+[node name="Muzzle" type="Node2D" parent="."]
+position = Vector2(10, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DeathScreen" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/DeathScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.329412)
+
+[node name="Panel" type="Panel" parent="CanvasLayer/DeathScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -46.0
+offset_right = 79.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/DeathScreen/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -37.0
+offset_top = 9.0
+offset_right = 37.0
+offset_bottom = 35.0
+grow_horizontal = 2
+text = "You Died!"
+
+[node name="Button" type="Button" parent="CanvasLayer/DeathScreen/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.5
+offset_top = -37.0
+offset_right = 32.5
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Restart"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-2, -11)
+zoom = Vector2(0.7, 0.7)
+drag_horizontal_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 4.67574
+shape = SubResource("CapsuleShape2D_7mecc")
+debug_color = Color(0.91947, 0.264176, 0.264631, 0.42)
+
+[connection signal="button_up" from="CanvasLayer/DeathScreen/Panel/Button" to="." method="restart"]

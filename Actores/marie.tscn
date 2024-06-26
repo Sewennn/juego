@@ -1,0 +1,198 @@
+[gd_scene load_steps=37 format=3 uid="uid://c81kxri71pf41"]
+
+[ext_resource type="Texture2D" uid="uid://b4weoef8lpo8q" path="res://Sprites/boss_marie/attack/summons/summon00_boss_marie_1p.png" id="1_5jial"]
+[ext_resource type="Script" path="res://scripts/marie.gd" id="1_smmvm"]
+[ext_resource type="Texture2D" uid="uid://bokr36lx6m623" path="res://Sprites/boss_marie/attack/summons/summon01_boss_marie_1p.png" id="2_hov4a"]
+[ext_resource type="Texture2D" uid="uid://cj1ep0d5428gc" path="res://Sprites/boss_marie/attack/summons/summon02_boss_marie_1p.png" id="3_y1ufa"]
+[ext_resource type="Texture2D" uid="uid://b2634xhbc8m35" path="res://Sprites/boss_marie/attack/summons/summon03_boss_marie_1p.png" id="4_fbhk0"]
+[ext_resource type="Texture2D" uid="uid://cpu2atiiy7kya" path="res://Sprites/boss_marie/attack/summons/summon04_boss_marie_1p.png" id="5_ewujy"]
+[ext_resource type="Texture2D" uid="uid://2fcaka0i7vse" path="res://Sprites/boss_marie/hitstun/hit_stun/hit_strong01_boss_marie_1p.png" id="6_nffuy"]
+[ext_resource type="Texture2D" uid="uid://clfwlgxk86qwe" path="res://Sprites/boss_marie/hitstun/hit_stun/hit_strong02_boss_marie_1p.png" id="7_r0hba"]
+[ext_resource type="Texture2D" uid="uid://68rjof14fjah" path="res://Sprites/boss_marie/hitstun/hit_stun/hit_strong03_boss_marie_1p.png" id="8_a10he"]
+[ext_resource type="Texture2D" uid="uid://drknkx6llmoh5" path="res://Sprites/boss_marie/hitstun/hit_stun/hit_strong04_boss_marie_1p.png" id="9_mri8u"]
+[ext_resource type="Texture2D" uid="uid://ta6fi32bv04n" path="res://Sprites/boss_marie/hitstun/hit_stun/hit_strong05_boss_marie_1p.png" id="10_aiv42"]
+[ext_resource type="Texture2D" uid="uid://d1jr2gx42umed" path="res://Sprites/boss_marie/hitstun/hit_stun/hit_weak01_boss_marie_1p.png" id="11_3v6x7"]
+[ext_resource type="Texture2D" uid="uid://dukxix3i50vm6" path="res://Sprites/boss_marie/hitstun/hit_stun/hit_weak02_boss_marie_1p.png" id="12_ijg5o"]
+[ext_resource type="Texture2D" uid="uid://ukgshms2jchg" path="res://Sprites/boss_marie/hitstun/hit_stun/hit_weak03_boss_marie_1p.png" id="13_iquab"]
+[ext_resource type="Texture2D" uid="uid://c4uu1ncmd2q14" path="res://Sprites/boss_marie/idle/stand_idle/marie_idle01_boss_marie_1p.png" id="14_33von"]
+[ext_resource type="Texture2D" uid="uid://c77v4ikhcodax" path="res://Sprites/boss_marie/idle/stand_idle/marie_idle02_boss_marie_1p.png" id="15_3hqr1"]
+[ext_resource type="Texture2D" uid="uid://bqinlkkn6e3ta" path="res://Sprites/boss_marie/idle/stand_idle/marie_idle03_boss_marie_1p.png" id="16_csiwf"]
+[ext_resource type="Texture2D" uid="uid://dp812h0qdtxa7" path="res://Sprites/boss_marie/idle/stand_idle/marie_idle04_boss_marie_1p.png" id="17_3ci1u"]
+[ext_resource type="Texture2D" uid="uid://drj8utgxmxjyx" path="res://Sprites/boss_marie/idle/stand_idle/marie_idle05_boss_marie_1p.png" id="18_lwwjr"]
+[ext_resource type="Texture2D" uid="uid://c4q6wb2ektb5k" path="res://Sprites/boss_marie/idle/stand_idle/marie_idle06_boss_marie_1p.png" id="19_6h306"]
+[ext_resource type="Texture2D" uid="uid://dudxnfkmoccu5" path="res://Sprites/boss_marie/idle/stand_idle/marie_idle07_boss_marie_1p.png" id="20_v2l60"]
+[ext_resource type="Texture2D" uid="uid://j6nlt2b2kogo" path="res://Sprites/boss_marie/idle/stand_idle/marie_idle08_boss_marie_1p.png" id="21_2ym1l"]
+[ext_resource type="Texture2D" uid="uid://ib2ekf5p5k2k" path="res://Sprites/boss_marie/idle/stand_idle/marie_idle09_boss_marie_1p.png" id="22_00avl"]
+[ext_resource type="Texture2D" uid="uid://usk5jt7roll6" path="res://Sprites/boss_marie/idle/stand_idle/marie_idle10_boss_marie_1p.png" id="23_onje3"]
+[ext_resource type="Texture2D" uid="uid://demy166bulwp4" path="res://Sprites/boss_marie/idle/stand_idle/marie_idle11_boss_marie_1p.png" id="24_0jbck"]
+[ext_resource type="Texture2D" uid="uid://cl5i1h3crsh0l" path="res://Sprites/boss_marie/idle/stand_idle/marie_idle12_boss_marie_1p.png" id="25_i8alu"]
+[ext_resource type="Texture2D" uid="uid://23yj12xw51sm" path="res://Sprites/boss_marie/idle/stand_idle/marie_idle13_boss_marie_1p.png" id="26_lh5k8"]
+[ext_resource type="Texture2D" uid="uid://bqkldt0ckk1t6" path="res://Sprites/boss_marie/idle/stand_idle/marie_idle14_boss_marie_1p.png" id="27_7swh1"]
+[ext_resource type="Texture2D" uid="uid://dr7ki43llq6ah" path="res://Sprites/boss_marie/idle/stand_idle/marie_idle15_boss_marie_1p.png" id="28_vsb2q"]
+[ext_resource type="Texture2D" uid="uid://bv8ums8exbf34" path="res://Sprites/boss_marie/idle/stand_idle/marie_idle16_boss_marie_1p.png" id="29_1h2h3"]
+[ext_resource type="Texture2D" uid="uid://cby7aovkcht2" path="res://Sprites/boss_marie/idle/stand_turn/transition01_boss_marie_1p.png" id="30_6fuv4"]
+[ext_resource type="Texture2D" uid="uid://cl3skehil14rv" path="res://Sprites/boss_marie/idle/stand_turn/transition02_boss_marie_1p.png" id="31_au6l8"]
+[ext_resource type="Texture2D" uid="uid://cc6rimldrdvx3" path="res://Sprites/boss_marie/idle/stand_turn/transition03_boss_marie_1p.png" id="32_a3obq"]
+[ext_resource type="Texture2D" uid="uid://tellbje36xl3" path="res://Sprites/boss_marie/idle/stand_turn/transition04_boss_marie_1p.png" id="33_5yref"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ysjnp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5jial")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hov4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_y1ufa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fbhk0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ewujy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hov4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_y1ufa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fbhk0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ewujy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hov4a")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_nffuy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_r0hba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_a10he")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mri8u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_aiv42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_3v6x7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ijg5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_iquab")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_33von")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_3hqr1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_csiwf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_3ci1u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_lwwjr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_6h306")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_v2l60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_2ym1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_00avl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_onje3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_0jbck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_i8alu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_lh5k8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_7swh1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_vsb2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_1h2h3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_6fuv4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_au6l8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_a3obq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_5yref")
+}],
+"loop": true,
+"name": &"turn",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6ap71"]
+radius = 41.2311
+
+[node name="marie" type="CharacterBody2D"]
+script = ExtResource("1_smmvm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_ysjnp")
+animation = &"attack"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6ap71")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="movement" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="movement" to="." method="_on_movement_timeout"]

@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://urda77dn2upd"]
+
+[ext_resource type="Script" path="res://scripts/bullet.gd" id="1_av40x"]
+[ext_resource type="Texture2D" uid="uid://cdjhbydy1o7wt" path="res://Sprites/Innocent Charm/bullet.png" id="2_aksvu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v7e2n"]
+radius = 5.0
+
+[node name="bullet" type="Node2D"]
+light_mask = 4
+visibility_layer = 2
+script = ExtResource("1_av40x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_aksvu")
+
+[node name="Area2D" type="Area2D" parent="."]
+light_mask = 0
+visibility_layer = 0
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+light_mask = 4
+visibility_layer = 2
+shape = SubResource("CircleShape2D_v7e2n")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 6)
+collision_mask = 2
